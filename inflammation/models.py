@@ -17,6 +17,16 @@ def load_csv(filename):
     """
     return np.loadtxt(fname=filename, delimiter=',')
 
+def analyse_data(data_source):
+    """Calculate the standard deviation by day between datasets
+    Gets all the inflammation csvs within a directory, works out the mean
+    inflammation value for each day across all datasets, then graphs the
+    standard deviation of these means."""
+    data = data_source.load_inflammation_data()
+    daily_standard_deviation = compute_standard_deviation_by_data(data)
+
+    return daily_standard_deviation
+
 
 def daily_mean(data):
     """Calculate the daily mean of a 2D inflammation data array for each day.
