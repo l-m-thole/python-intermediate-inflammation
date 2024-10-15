@@ -27,6 +27,7 @@ def main(args):
         }
      develop
 
+# add visualization of the data
      views.visualize(view_data)
 
 if __name__ == "__main__":
